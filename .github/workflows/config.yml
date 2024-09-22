@@ -50,9 +50,9 @@ jobs:
       #     vuln-type: '*'
       #     severity: 'CRITICAL'
 
-      # - name: Run test on docker container
-      #   run: |
-      #     chmod +x test-container.sh && sh test-container.sh texplode/rusttaskcone:${{ steps.version.outputs.date }}-${{ github.run_id }}
+      - name: Run test on docker container
+        run: |
+          chmod +x test-container.sh && sh test-container.sh samorahno/rusttaskcone:${{ steps.version.outputs.date }}-${{ github.run_id }}
 
       - name: Login to DockerHub
         uses: docker/login-action@v2
